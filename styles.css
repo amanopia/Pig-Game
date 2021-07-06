@@ -16,7 +16,7 @@ main {
 }
 .player {
   background-color: #5746b2;
-  height: 50vw;
+  height: 70vw;
   width: 80vw;
 
   transition: all 0.75s;
