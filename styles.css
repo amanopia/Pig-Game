@@ -23,6 +23,7 @@ main {
   transition: all 0.75s;
   text-align: center;
   margin: 10px;
+  color: white;
 }
 
 .active {
@@ -33,5 +34,5 @@ main {
 }
 .features--2 {
   position: relative;
-  bottom: -43vh;
+  bottom: -40vh;
 }
