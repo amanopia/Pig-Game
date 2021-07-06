@@ -13,6 +13,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
 }
 .player {
   background-color: #5746b2;
@@ -26,7 +27,11 @@ main {
 
 .active {
 }
+
+.features--1 {
+  transform: rotate(-180deg);
+}
 .features--2 {
   position: relative;
-  bottom: -20vh;
+  bottom: -40vh;
 }
