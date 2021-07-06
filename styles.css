@@ -16,7 +16,7 @@ main {
 }
 .player {
   background-color: #5746b2;
-  height: 50vw;
+  height: 100vw;
   width: 80vw;
 
   transition: all 0.75s;
@@ -26,11 +26,7 @@ main {
 
 .active {
 }
-
-.player--0 {
+.features--2 {
   position: relative;
-}
-
-.player--1 {
-  position: relative;
+  bottom: -20vh;
 }
