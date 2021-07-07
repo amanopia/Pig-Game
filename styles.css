@@ -87,3 +87,14 @@ p {
 .btn--roll {
   padding: 15px 36px;
 }
+.player--winner {
+  background-color: #ff94cc;
+}
+
+.dice {
+  position: absolute;
+  height: 7rem;
+  width: 7rem;
+  top: 11.4em;
+  right: 4em;
+}
