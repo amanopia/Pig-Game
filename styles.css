@@ -1,3 +1,5 @@
+@import url("http://fonts.cdnfonts.com/css/dunkin");
+
 body {
   background-color: #000;
 }
@@ -76,7 +78,7 @@ p {
 .btn:active {
   transition: 0.2s;
   transform: scale(0.95);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15);
 }
 .btn--hold {
   padding: 15px 32px;
