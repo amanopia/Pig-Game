@@ -22,7 +22,7 @@ section {
   position: relative;
 }
 section div {
-  margin: 20px;
+  margin: 15px;
 }
 p {
   margin: 0;
@@ -60,7 +60,7 @@ p {
 
 .btn {
   position: relative;
-  top: 60px;
+  top: 120px;
   background-color: #fff;
   border: none;
   color: #000;
@@ -93,8 +93,8 @@ p {
 
 .dice {
   position: absolute;
-  height: 6em;
-  width: 6em;
-  top: 12.4em;
-  right: 3.4em;
+  height: 8em;
+  width: 8em;
+  top: 14.3em;
+  right: 3.1em;
 }
