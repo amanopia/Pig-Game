@@ -1,38 +1,87 @@
 body {
-  background-color: black;
+  background-color: #000;
 }
 
-#target {
-  color: white;
-}
 header {
-  color: white;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  font-family: "Dunkin Sans", sans-serif;
 }
-main {
-  /* position: relative; */
+
+section {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20px;
+  position: relative;
 }
-.player {
-  background-color: #5746b2;
-  height: 70vw;
-  width: 80vw;
-
-  transition: all 0.75s;
-  text-align: center;
-  margin: 10px;
-  color: white;
+section div {
+  margin: 20px;
 }
-
-.active {
+p {
+  margin: 0;
+}
+.player--1 {
+  /* background-color: #5745b8; */
+  background-color: #a239ea;
+  height: 50vh;
+  transform: rotate(180deg);
+}
+.player--2 {
+  /* background-color: #b5f07f; */
+  background-color: #5c33f6;
+  height: 50vh;
 }
 
 .features--1 {
-  transform: rotate(-180deg);
+  position: relative;
+  color: #fff;
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 2em;
+  line-height: 1.2em;
 }
 .features--2 {
   position: relative;
-  bottom: -40vh;
+  color: #fff;
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 2em;
+  line-height: 1.2em;
+
+  /* color: #5745b8; */
+}
+
+.btn {
+  position: relative;
+  top: 60px;
+  background-color: #fff;
+  border: none;
+  color: #000;
+  text-decoration: none;
+  display: block;
+  border-radius: 15px;
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 1em;
+  outline: none;
+}
+.btn:focus {
+  outline: none;
+}
+.btn:active {
+  transition: 0.2s;
+  transform: scale(0.95);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+.btn--hold {
+  padding: 15px 32px;
+  margin-bottom: 10px;
+}
+.btn--roll {
+  padding: 15px 36px;
 }
