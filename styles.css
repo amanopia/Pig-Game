@@ -32,11 +32,13 @@ p {
   background-color: #a239ea;
   height: 50vh;
   transform: rotate(180deg);
+  transition: transform 0.3s;
 }
 .player--2 {
   /* background-color: #b5f07f; */
   background-color: #5c33f6;
   height: 50vh;
+  transition: transform 0.3s;
 }
 
 .features--1 {
