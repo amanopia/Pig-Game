@@ -5,6 +5,7 @@ const score1 = document.getElementById("score--1");
 const score2 = document.getElementById("score--2");
 const name1 = document.getElementById("name--1");
 const name2 = document.getElementById("name--2 ");
+// BUTTONS
 const hold1 = document.querySelector(".btn--hold--1");
 const roll1 = document.querySelector(".btn--roll--1");
 const hold2 = document.querySelector(".btn--hold--2");
@@ -24,7 +25,10 @@ let currentScore1 = 0;
 let currentScore2 = 0;
 
 roll1.addEventListener("click", function () {
+  // When activePlayer is 0, player 1 is disabled.
   if (playing && activePlayer === 0) {
+    player1.style.transform = "scale(1)";
+    player2.style.transform = "scale(0.9)";
     let ranBtnRoll = Math.ceil(Math.random() * 6);
     dice1.src = `dice-${ranBtnRoll}.png`;
 
