@@ -95,6 +95,10 @@ p {
   position: absolute;
   height: 6.8em;
   width: 6.8em;
-  top: 14.9em;
+  top: 15em;
   right: 2.8em;
+}
+
+.hidden {
+  display: none;
 }
