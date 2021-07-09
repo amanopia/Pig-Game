@@ -54,6 +54,16 @@ roll1.addEventListener("click", function () {
 
   //   console.log(ranBtnRoll);
 });
+hold1.addEventListener("click", function () {
+  if (playing) {
+    scores[activePlayer] = currentScore1;
+    dice1.classList.add("hidden");
+    dice2.classList.remove("hidden");
+    activePlayer = activePlayer === 0 ? 1 : 0;
+    player2.style.transform = "scale(1.06)";
+    player1.style.transform = "scale(0.96) rotate(180deg)";
+  }
+});
 roll2.addEventListener("click", function () {
   if (playing && activePlayer === 1) {
     player2.style.transform = "scale(1.06)";
@@ -75,6 +85,7 @@ roll2.addEventListener("click", function () {
     }
   }
 });
+
 // // const body = document.body;
 // body.onload = fadeOutEffect;
 
@@ -91,5 +102,4 @@ roll2.addEventListener("click", function () {
 //     }
 //   }, 10);
 // }
-
 // // document.getElementById("target").addEventListener("click", fadeOutEffect);
