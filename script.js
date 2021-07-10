@@ -80,7 +80,7 @@ hold1.addEventListener("click", function () {
     scores[activePlayer] += currentScore1;
     score1hold.textContent = scores[activePlayer];
 
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= 100) {
       dice1.classList.add("hidden");
       playing = false;
       console.log(`player ${activePlayer} wins.`);
@@ -111,7 +111,7 @@ hold2.addEventListener("click", function () {
     scores[activePlayer] += currentScore2;
     score2hold.textContent = scores[activePlayer];
 
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= 100) {
       dice2.classList.add("hidden");
       playing = false;
       console.log(`Player ${activePlayer} wins!`);
@@ -150,20 +150,3 @@ btnNew.addEventListener("click", function () {
   }
   playing = true;
 });
-// // const body = document.body;
-// body.onload = fadeOutEffect;
-
-// function fadeOutEffect() {
-//   var fadeTarget = document.getElementById("target");
-//   var fadeEffect = setInterval(function () {
-//     if (!fadeTarget.style.opacity) {
-//       fadeTarget.style.opacity = 1;
-//     }
-//     if (fadeTarget.style.opacity > 0) {
-//       fadeTarget.style.opacity -= 0.1;
-//     } else {
-//       clearInterval(fadeEffect);
-//     }
-//   }, 10);
-// }
-// // document.getElementById("target").addEventListener("click", fadeOutEffect);
