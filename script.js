@@ -79,10 +79,11 @@ hold1.addEventListener("click", function () {
     scores[activePlayer] += currentScore1;
     score1hold.textContent = scores[activePlayer];
 
-    if (scores[activePlayer] >= 100) {
+    if (scores[activePlayer] >= 20) {
       dice1.classList.add("hidden");
       playing = false;
       console.log(`player ${activePlayer} wins.`);
+      player1.classList.toggle("player--winner");
       // Feature to add score limit to be set later
     } else {
       switchPlayer1();
@@ -109,9 +110,13 @@ hold2.addEventListener("click", function () {
     scores[activePlayer] += currentScore2;
     score2hold.textContent = scores[activePlayer];
 
-    if (scores[activePlayer] >= 100) {
+    if (scores[activePlayer] >= 20) {
       dice2.classList.add("hidden");
+      playing = false;
       console.log(`Player ${activePlayer} wins!`);
+      player2.classList.toggle("player--winner");
+    } else {
+      switchPlayer2();
     }
   }
 });
