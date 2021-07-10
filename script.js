@@ -78,14 +78,22 @@ roll2.addEventListener("click", function () {
       dice2.classList.add("hidden");
       dice1.classList.remove("hidden"); // removing the hidden class here immediately makes the dice visible, as compared to the button being clicked by the other user and then the dice becoming visible.
       activePlayer = activePlayer === 1 ? 0 : 1;
-      console.log(activePlayer);
       // Zoom-in shows control shift
       player1.style.transform = "scale(1.06) rotate(180deg)";
       player2.style.transform = "scale(0.96)";
     }
   }
 });
-
+hold2.addEventListener("click", function () {
+  if (playing) {
+    scores[activePlayer] = currentScore2;
+    dice2.classList.add("hidden");
+    dice1.classList.remove("hidden");
+    activePlayer = activePlayer === 1 ? 0 : 1;
+    player1.style.transform = "scale(1.06) rotate(180deg)";
+    player2.style.transform = "scale(0.96)";
+  }
+});
 // // const body = document.body;
 // body.onload = fadeOutEffect;
 
