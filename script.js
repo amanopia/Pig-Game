@@ -14,6 +14,7 @@ const hold1 = document.querySelector(".btn--hold--1");
 const roll1 = document.querySelector(".btn--roll--1");
 const hold2 = document.querySelector(".btn--hold--2");
 const roll2 = document.querySelector(".btn--roll--2");
+const btnNew = document.querySelector(".btn--new--game");
 // DICE IMAGE
 const dice1 = document.getElementById("dice--1");
 const dice2 = document.getElementById("dice--2");
@@ -119,6 +120,35 @@ hold2.addEventListener("click", function () {
       switchPlayer2();
     }
   }
+});
+
+btnNew.addEventListener("click", function () {
+  scores = [0, 0];
+  currentScore1 = 0;
+  currentScore2 = 0;
+
+  score1.textContent = currentScore1;
+  score2.textContent = currentScore2;
+
+  score1hold.textContent = scores[0];
+  score2hold.textContent = scores[1];
+  dice1.classList.remove("hidden");
+  dice2.classList.remove("hidden");
+
+  if (activePlayer === 0) {
+    player1.classList.remove("player--winner");
+
+    player1.style.transform = "scale(1.06) rotate(180deg)"; // Zoom-in shows control shift
+    player2.style.transform = "scale(0.96)";
+  } else if (activePlayer === 1) {
+    player2.classList.remove("player--winner");
+
+    player1.style.transform = "scale(1.06) rotate(180deg)"; // Zoom-in shows control shift
+    player2.style.transform = "scale(0.96)";
+
+    activePlayer = 0;
+  }
+  playing = true;
 });
 // // const body = document.body;
 // body.onload = fadeOutEffect;

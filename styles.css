@@ -104,3 +104,8 @@ p {
 .hidden {
   display: none;
 }
+
+.btn--new--game {
+  padding: 15px 36px;
+  margin: 0 auto;
+}
