@@ -1,8 +1,12 @@
 "use strict";
 const player1 = document.querySelector(".player--1");
 const player2 = document.querySelector(".player--2");
-const score1 = document.getElementById("score--1");
-const score2 = document.getElementById("score--2");
+
+const score1 = document.getElementById("score--1--roll");
+const score1hold = document.getElementById("score--1--hold");
+const score2 = document.getElementById("score--2--roll");
+const score2hold = document.getElementById("score--2--hold");
+
 const name1 = document.getElementById("name--1");
 const name2 = document.getElementById("name--2 ");
 // BUTTONS
@@ -29,6 +33,28 @@ const animation = function () {
   player1.style.transform = "scale(1.06) rotate(180deg)";
   player2.style.transform = "scale(0.96)";
 };
+
+const switchPlayer1 = function () {
+  currentScore1 = 0;
+  score1.textContent = currentScore1;
+
+  dice1.classList.add("hidden");
+  dice2.classList.remove("hidden"); // removing the hidden class here immediately makes the dice visible, as compared to the button being clicked by the other user and then the dice becoming visible.
+  activePlayer = activePlayer === 0 ? 1 : 0;
+  console.log(activePlayer);
+  player2.style.transform = "scale(1.06)"; // Zoom-in shows control shift
+  player1.style.transform = "scale(0.96) rotate(180deg)";
+};
+
+const switchPlayer2 = function () {
+  currentScore2 = 0;
+  score2.textContent = currentScore2;
+  dice2.classList.add("hidden");
+  dice1.classList.remove("hidden"); // removing the hidden class here immediately makes the dice visible, as compared to the button being clicked by the other user and then the dice becoming visible.
+  activePlayer = activePlayer === 1 ? 0 : 1;
+  player1.style.transform = "scale(1.06) rotate(180deg)"; // Zoom-in shows control shift
+  player2.style.transform = "scale(0.96)";
+};
 // Zoom-in occurs after 500 mili-seconds.
 setTimeout(animation, 500);
 
@@ -42,13 +68,7 @@ roll1.addEventListener("click", function () {
       currentScore1 += ranBtnRoll;
       score1.textContent = currentScore1;
     } else {
-      dice1.classList.add("hidden");
-      dice2.classList.remove("hidden"); // removing the hidden class here immediately makes the dice visible, as compared to the button being clicked by the other user and then the dice becoming visible.
-      activePlayer = activePlayer === 0 ? 1 : 0;
-      console.log(activePlayer);
-      // Zoom-in shows control shift
-      player2.style.transform = "scale(1.06)";
-      player1.style.transform = "scale(0.96) rotate(180deg)";
+      switchPlayer1();
     }
   }
 
@@ -56,12 +76,17 @@ roll1.addEventListener("click", function () {
 });
 hold1.addEventListener("click", function () {
   if (playing) {
-    scores[activePlayer] = currentScore1;
-    dice1.classList.add("hidden");
-    dice2.classList.remove("hidden");
-    activePlayer = activePlayer === 0 ? 1 : 0;
-    player2.style.transform = "scale(1.06)";
-    player1.style.transform = "scale(0.96) rotate(180deg)";
+    scores[activePlayer] += currentScore1;
+    score1hold.textContent = scores[activePlayer];
+
+    if (scores[activePlayer] >= 100) {
+      dice1.classList.add("hidden");
+      playing = false;
+      console.log(`player ${activePlayer} wins.`);
+      // Feature to add score limit to be set later
+    } else {
+      switchPlayer1();
+    }
   }
 });
 roll2.addEventListener("click", function () {
@@ -75,23 +100,19 @@ roll2.addEventListener("click", function () {
       currentScore2 += ranBtnRoll;
       score2.textContent = currentScore2;
     } else {
-      dice2.classList.add("hidden");
-      dice1.classList.remove("hidden"); // removing the hidden class here immediately makes the dice visible, as compared to the button being clicked by the other user and then the dice becoming visible.
-      activePlayer = activePlayer === 1 ? 0 : 1;
-      // Zoom-in shows control shift
-      player1.style.transform = "scale(1.06) rotate(180deg)";
-      player2.style.transform = "scale(0.96)";
+      switchPlayer2();
     }
   }
 });
 hold2.addEventListener("click", function () {
   if (playing) {
-    scores[activePlayer] = currentScore2;
-    dice2.classList.add("hidden");
-    dice1.classList.remove("hidden");
-    activePlayer = activePlayer === 1 ? 0 : 1;
-    player1.style.transform = "scale(1.06) rotate(180deg)";
-    player2.style.transform = "scale(0.96)";
+    scores[activePlayer] += currentScore2;
+    score2hold.textContent = scores[activePlayer];
+
+    if (scores[activePlayer] >= 100) {
+      dice2.classList.add("hidden");
+      console.log(`Player ${activePlayer} wins!`);
+    }
   }
 });
 // // const body = document.body;
