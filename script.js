@@ -64,8 +64,6 @@ const switchPlayer2 = function () {
   player1.style.transform = "scale(1.06) rotate(180deg)"; // Zoom-in shows control shift
   player2.style.transform = "scale(0.96)";
 };
-// Zoom-in occurs after 500 mili-seconds.
-setTimeout(animation, 500);
 
 roll1.addEventListener("click", function () {
   // When activePlayer is 0, player 1 is disabled.
@@ -166,4 +164,6 @@ okBtn.addEventListener("click", function () {
   overlay.classList.toggle("hidden");
   name1.textContent = playerOneInput.value;
   name2.textContent = playerTwoInput.value;
+  // Zoom-in occurs after 500 mili-seconds.
+  setTimeout(animation, 500);
 });
