@@ -162,8 +162,17 @@ btnNew.addEventListener("click", function () {
 okBtn.addEventListener("click", function () {
   modal.classList.toggle("hidden");
   overlay.classList.toggle("hidden");
-  name1.textContent = playerOneInput.value;
-  name2.textContent = playerTwoInput.value;
+  if (playerOneInput.value === "" && playerTwoInput.value === "") {
+    name1.textContent = "Player 1";
+    name2.textContent = "Player 2";
+  } else if (playerOneInput.value === "" && playerTwoInput.vlaue !== "") {
+    name1.textContent = "Player 1";
+    name2.textContent = playerTwoInput.value;
+  } else if (playerOneInput.value !== "" && playerTwoInput.value === "") {
+    name1.textContent = playerOneInput.value;
+    name2.textContent = "Player 2";
+  }
+
   // Zoom-in occurs after 500 mili-seconds.
   setTimeout(animation, 500);
 });
