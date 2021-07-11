@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pig Game v 1.1</title>
+    <title>Pig Game v 1.2</title>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -28,10 +28,16 @@
   <body>
     <header>
       <h1>Pig Game</h1>
-      
+
     </header>
-    <main class>
-      <section class="player player--1">
+    <main>
+
+      <div class="modal">
+        <input type="text" placeholder="Player 1" class="player1--name features--1">
+        <input type="text" placeholder="Player 2" class="player2--name features--1">
+        <button class="btn btn--ok">Ok</button>
+      </div>
+      <section class="player player--1 ">
         <div>
           <p class="features--1" id="name--1">Player 1</p>
           <p class="features--1" id="score--1--roll">21</p>
@@ -41,7 +47,7 @@
         </div>
         <img src="dice-5.png" alt="Playing dice" class="dice" id="dice--1"/>
       </section>
-      <section class="row player player--2">
+      <section class="row player player--2 ">
         <div class="col-sm-6">
           <p class="features--2" id="name--2">Player 2</p>
           <p class="features--2" id="score--2--roll">20</p>
@@ -60,6 +66,7 @@
         <div class="col" style="color: white">Column</div>
       </div> -->
     </div>
+    <div class="overlay"></div>
     <script src="script.js"></script>
   </body>
 </html>

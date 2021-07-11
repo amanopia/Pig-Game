@@ -8,7 +8,7 @@ const score2 = document.getElementById("score--2--roll");
 const score2hold = document.getElementById("score--2--hold");
 
 const name1 = document.getElementById("name--1");
-const name2 = document.getElementById("name--2 ");
+const name2 = document.getElementById("name--2");
 // BUTTONS
 const hold1 = document.querySelector(".btn--hold--1");
 const roll1 = document.querySelector(".btn--roll--1");
@@ -18,6 +18,14 @@ const btnNew = document.querySelector(".btn--new--game");
 // DICE IMAGE
 const dice1 = document.getElementById("dice--1");
 const dice2 = document.getElementById("dice--2");
+// MODAL
+const okBtn = document.querySelector(".btn--ok");
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+
+//TEST
+const playerOneInput = document.querySelector(".player1--name");
+const playerTwoInput = document.querySelector(".player2--name");
 
 let playing = true;
 score1.textContent = 0;
@@ -149,4 +157,13 @@ btnNew.addEventListener("click", function () {
     activePlayer = 0;
   }
   playing = true;
+});
+
+// MODAL V1.2
+
+okBtn.addEventListener("click", function () {
+  modal.classList.toggle("hidden");
+  overlay.classList.toggle("hidden");
+  name1.textContent = playerOneInput.value;
+  name2.textContent = playerTwoInput.value;
 });
