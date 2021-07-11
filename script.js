@@ -171,6 +171,9 @@ okBtn.addEventListener("click", function () {
   } else if (playerOneInput.value !== "" && playerTwoInput.value === "") {
     name1.textContent = playerOneInput.value;
     name2.textContent = "Player 2";
+  } else {
+    name1.textContent = playerOneInput.value;
+    name2.textContent = playerTwoInput.value;
   }
 
   // Zoom-in occurs after 500 mili-seconds.
